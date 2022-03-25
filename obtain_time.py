@@ -12,6 +12,7 @@ def extract_distance(coord1,coord2):
     endpoint = f"{base_url}?origins={coord1}&destinations={coord2}&mode=driving&key={api_key}"
     # see how our endpoint includes our API key? Yes this is yet another reason to restrict the key
     r = requests.get(endpoint)
+    distance = ""
     if r.status_code not in range(200, 299):
         return None, None
     try:
